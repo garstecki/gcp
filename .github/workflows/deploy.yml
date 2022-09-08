@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  job_id:
+  deployment:
     runs-on: ubuntu-latest
 
     permissions:
@@ -25,6 +25,3 @@ jobs:
 
       - id: 'deploy'
         uses: 'google-github-actions/deploy-appengine@v0'
-
-      - id: 'url'
-        run: 'curl "${{ steps.deploy.outputs.url }}"'
