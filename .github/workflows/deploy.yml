@@ -23,3 +23,5 @@ jobs:
 
       - id: 'deploy'
         uses: 'google-github-actions/deploy-appengine@v0'
+        with:
+          image_url: gcr.io/high-plating-318219/gcp:latest
