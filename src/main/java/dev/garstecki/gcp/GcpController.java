@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 class GcpController {
     @GetMapping("/")
     String main() {
-        return "GCP V3";
+        return "GCP V4";
     }
 }
