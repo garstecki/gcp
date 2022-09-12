@@ -33,6 +33,9 @@ jobs:
         with:
           arguments: test --debug
 
+      - name: Files
+        run: tree
+
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
