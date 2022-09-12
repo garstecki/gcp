@@ -10,7 +10,7 @@ class UserRepositoryTest {
     @Autowired
     private UserRepository repository;
 
-//    @Test
+    @Test
     void can_save_and_load_user() {
         repository.save(new User("test"));
 
