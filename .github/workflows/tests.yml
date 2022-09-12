@@ -27,3 +27,10 @@ jobs:
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: test
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        with:
+          name: Tests
+          path: build/test-results/test/*.xml
+          reporter: jest-junit
