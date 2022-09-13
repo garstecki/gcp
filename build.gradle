@@ -16,6 +16,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-gcp-starter-data-datastore:1.2.8.RELEASE'
+	implementation 'org.springframework.cloud:spring-cloud-gcp-starter-pubsub:1.2.8.RELEASE'
+	implementation 'org.springframework.integration:spring-integration-core'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
