@@ -28,7 +28,6 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
-          export_default_credentials: true
 
       - run: cd infrastructure
 
@@ -38,4 +37,4 @@ jobs:
         with:
           command: preview
           stack-name: dev
-          cloud-url: gs://garstecki-pulumi
+          cloud-url: 'gs://garstecki-pulumi'
