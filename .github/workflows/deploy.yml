@@ -29,12 +29,11 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
-      - run: cd infrastructure
-
-      - run: npm install
+      - run: npm install ./infrastructure
 
       - uses: pulumi/actions@v3
         with:
           command: preview
           stack-name: dev
           cloud-url: 'gs://garstecki-pulumi'
+          work-dir: infrastructure
