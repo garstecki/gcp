@@ -25,6 +25,8 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
+      - run: cd infrastructure
+
       - run: npm install
 
       - uses: pulumi/actions@v3
