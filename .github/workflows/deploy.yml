@@ -1,6 +1,10 @@
 name: Deploy
 
-on: [workflow_dispatch]
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 permissions:
   contents: read
@@ -21,7 +25,11 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
-      - id: 'deploy'
-        uses: 'google-github-actions/deploy-appengine@v0'
+      - run: npm install
+
+      - uses: pulumi/actions@v3
         with:
-          image_url: gcr.io/high-plating-318219/gcp:latest
+          command: preview
+          stack-name: dev
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
